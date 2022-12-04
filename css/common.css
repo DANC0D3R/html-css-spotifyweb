@@ -1,16 +1,111 @@
 /* RESET */
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* REGOLE GENERALI */
+/* SPAZI */
+:root{
+    --main-space: 1.2rem;
+    --half-space: 0.6rem;
+    --double-space: 2.4rem;
+    --inner-space: 0.2rem;
+}
 
-.flex{
-    display: flex;
+/* PALETTE COLORI */
+:root{
+    --gray-color: #717171;
+    --green-color: #ADFF2F;
 }
 
 /* TESTO */
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
 
-/* COLORI */
+a{
+    text-decoration: none;
+}
+
+h2, h4{
+    color: #FFFFFF;
+}
+
+/* IMMAGINI */
+img{
+    width: 100%;
+}
+
+/* LISTE */
+ul{
+    list-style: none;
+}
+
+/* BOTTONI */
+.nav-button{
+    color: var(--gray-color);
+}
+
+button{
+    padding: 0;
+    
+    border: none;
+    
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+a.call-to-action{
+    padding: var(--half-space) var(--double-space);
+
+    border: 0.5px solid #FFFFFF;
+    border-radius: 40px;
+
+    font-size: 0.9em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+/* PROGRESS BAR */
+.progress-bar-bg{
+    height: 0.4rem;
+
+    border-radius: 10px;
+    
+    position: relative;
+
+    background-color: var(--gray-color);
+}
+
+.progress{
+    height: 0.4rem;
+
+    border-radius: 10px;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #FFFFFF;
+}
+
+.progress::after{
+    display: none;
+    content: "";
+
+    width: 0.9rem;
+    height: 0.9rem;
+
+    border-radius: 50%;
+    
+    position: absolute;
+    left: calc(100% - 0.45rem);
+    top: calc(50% - 0.45rem);
+    
+    background-color: #FFFFFF;
+}

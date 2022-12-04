@@ -1,7 +1,498 @@
-/* REGOLE GENERALI */
-
-/* ----- HEADER ----- */
-
 /* ----- MAIN ----- */
+main{
+    display: flex;
+
+    height: calc(100vh - 100px);
+
+    overflow: hidden;
+}
+
+/* ASIDE */
+main aside{
+    display: flex;
+    flex-direction: column;
+
+    width: 240px;
+    min-height: 400px;
+
+    padding: var(--main-space) var(--main-space) 0 0;
+
+    background-color: #000000;
+}
+
+.logo, .playlist-menu, .playlist-list, .account-section{
+    padding-left: var(--main-space);
+}
+
+.account-section > a:first-child, hr{
+    margin-bottom: var(--half-space);
+}
+
+.account-button{
+    margin-bottom: var(--main-space);
+}
+
+/* LOGO */
+.logo{
+    margin-bottom: var(--main-space);
+}
+
+.logo img[alt='Small Logo']{
+    display: none;
+}
+
+.logo img{
+    width: 70%;
+}
+
+/* SCHEDE APP */
+.main-nav{
+    margin-bottom: var(--main-space);
+}
+
+.main-nav ul li{
+    padding: var(--inner-space) var(--main-space);
+}
+
+.main-nav ul .active{
+    box-shadow: inset 3px 0px 0px 0px var(--green-color);
+}
+
+.main-nav ul .active .nav-button{
+    color: #FFFFFF;
+}
+
+.main-nav button > *{
+    vertical-align: middle;
+}
+
+.main-nav .image{
+    display: inline-block;
+    width: 25px;
+}
+
+/* MENU PLAYLIST */
+.playlist-menu h4{
+    margin-bottom: var(--half-space);
+}
+
+.playlist-menu .add-playlist-button{
+    margin-bottom: var(--half-space);
+}
+
+.playlist-menu .add-playlist-button .nav-button{
+    font-size: 1.2em;
+}
+
+.playlist-menu .add-playlist-button .plus{
+    display: inline-block;
+
+    height: 35px;
+    width: 35px;
+
+    margin-right: var(--half-space);
+    vertical-align: middle;
+    line-height: 35px;
+    
+    font-size: 2rem;
+    
+    background-color: #A3A3A3;
+}
+
+/* ELENCO PLAYLIST */
+.playlist-list{
+    flex-grow: 1;
+
+    overflow-y: auto;
+}
+
+.playlist-list ul button{
+    padding: var(--half-space) 0;
+
+    color: var(--gray-color);
+}
+
+/* ACCOUNT */
+.account-section a{
+    display: block;
+
+    padding-top: var(--main-space);
+
+    font-size: 0.9em;
+
+    color: var(--gray-color);
+}
+
+.account-section hr{
+    border-color: var(--gray-color);
+}
+
+.account-section .image, .account-section .nav-button{
+    vertical-align: middle;
+}
+
+.account-section .image{
+    display: inline-block;
+
+    width: 25px;
+    height: 25px;
+
+    margin-right: var(--inner-space);
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    background-color: var(--gray-color);
+}
+
+/* SCHEDA CORRENTE */
+main #current-page{
+    width: calc(100% - 240px);
+
+    background-color: #141922;
+
+    overflow-y: auto;
+}
+
+.account-section button .nav-button{
+    color: #FFFFFF;
+}
+
+/* TOP BAR */
+#current-page .main-top-bar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    height: 100px;
+    padding: var(--main-space);
+    
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* BARRA DI NAVIGAZIONE */
+#current-page > .container{
+    padding: 0 var(--main-space) var(--main-space);
+}
+
+#current-page > .container nav{
+    margin: var(--main-space) 0;
+}
+
+#current-page .current-page-nav{
+    text-align: center;
+}
+
+#current-page .current-page-nav ul li{
+    display: inline-block;
+
+    padding: var(--main-space);
+}
+
+#current-page .current-page-nav ul li a{
+    text-transform: uppercase;
+
+    color: var(--gray-color);
+}
+
+#current-page .current-page-nav ul li hr{
+    width: 30px;
+    margin: var(--inner-space) auto;
+
+    border-color: transparent;
+}
+
+#current-page .current-page-nav ul li hr.active{
+    border-color: var(--green-color);
+}
+
+/* ALBUM */
+#current-page .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#current-page .main-section-title{
+    margin-bottom: var(--main-space);
+}
+
+.main-section-title p{
+    font-size: 0.8em;
+
+    color: var(--gray-color);
+}
+
+#current-page h2{
+    margin-bottom: var(--half-space);
+
+    font-weight: 800;
+}
+
+#current-page .card{
+    width: calc(88% / 6);
+    margin-right: 2%;
+    margin-bottom: var(--main-space);
+
+    text-align: center;
+}
+
+#current-page .card .image{
+    width: 100%;
+
+    aspect-ratio: 1/1;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+#current-page #popular .card .image{
+    border-radius: 50%;
+}
+
+#current-page .card .image .overlay{
+    width: 100%;
+    height: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: none;
+}
+
+#current-page .card .image .overlay > *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #FFFFFF;
+}
+
+
+#current-page .card .album-title{
+    margin-top: var(--main-space);
+
+    font-weight: 800;
+
+    color: #FFFFFF;
+}
+
+#current-page .card .album-subtitle{
+    margin-top: var(--half-space);
+
+    font-size: 0.8em;
+
+    color: var(--gray-color);
+}
+
 
 /* ----- FOOTER ----- */
+#player{
+    display: flex;
+    justify-content: space-between;
+
+
+    height: 100px;
+    background-color: #282828;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* TRACCIA IN RIPRODUZIONE */
+#player .now-playing{
+    display: flex;
+    align-items: center;
+
+    width: 20%;
+    padding: var(--main-space);
+}
+
+.now-playing .song{
+    display: flex;
+
+    margin-right: var(--double-space);
+}
+
+.now-playing .song .image{
+    width: 50px;
+    margin-right: var(--half-space);
+}
+
+.now-playing .song .image img{
+    display: block;
+}
+
+.now-playing .song .song-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.now-playing .song .song-info .song-title{
+    font-size: 0.8em;
+    
+    color: #FFFFFF;
+}
+
+.now-playing .song .song-info .artist{
+    font-size: 0.7em;
+
+    color: var(--gray-color);
+}
+
+.now-playing .icons i{
+    margin-right: var(--half-space);
+
+    color: var(--gray-color);
+}
+
+/* CONTROLLI */
+#player .player-controls{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 40%;
+    padding: var(--half-space);
+}
+
+/* BUTTON BAR */
+.player-controls .button-bar ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-controls .button-bar ul li{
+    padding: 0 var(--half-space);
+}
+
+.player-controls .button-bar ul li .fa-2x{
+    padding: 0 var(--half-space);
+}
+
+.player-controls .button-bar ul li button{
+    font-size: 1.2em;
+
+    color: #FFFFFF;
+}
+
+/* PROGRESS BAR TRACCIA IN RIPRODUZIONE */
+.player-controls .progress-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    margin-top: var(--half-space);
+}
+
+.player-controls .progress-bar .time{
+    padding: 0 var(--inner-space);
+
+    color: #FFFFFF;
+}
+
+.player-controls .progress-bar-bg{
+    width: 90%;
+}
+
+.player-controls .progress-bar-bg .progress{
+    width: 20%;
+}
+
+.player-controls .progress-bar .time{
+    font-size: 0.7em;
+}
+
+/* SEZIONE DI DESTRA */
+#player .right-section{
+    display: flex;
+    align-items: center;
+
+    width: 20%;
+    padding: var(--half-space);
+
+    color: #FFFFFF;
+}
+
+.right-section .icons{
+    width: 40%;
+    text-align: right;
+}
+
+.right-section i{
+    margin-right: var(--main-space);
+}
+
+.right-section .progress-bar{
+    width: 60%;
+    padding: var(--inner-space) 0;
+}
+
+.right-section .progress-bar-bg{
+    width: 100%;
+}
+
+.right-section .progress-bar-bg .progress{
+    width: 20%;
+}
+
+
+
+
+/* - HOVER - */
+
+/* BOTTONE CALL TO ACTION*/
+.main-top-bar .call-to-action:hover{
+    transform:scale(1.1) ;
+}
+
+/* CARDS */
+#current-page .card:hover .image .overlay{
+    display: block;
+}
+
+/* BOTTONI BANCHI */
+main aside button:not(.add-playlist-button):hover, main aside button:hover .nav-button, main aside a:hover .nav-button, main #current-page .current-page-nav li:hover a, #player .now-playing .icons i:hover{
+    color: #FFFFFF;
+}
+
+.add-playlist-button:hover .plus{
+    background-color: #FFFFFF;
+}
+
+/* PLAYER */
+.now-playing .song .song-info .artist:hover{
+    text-decoration: underline;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+.player-controls .button-bar ul .play:hover{
+    transform: scale(1.05);
+}
+
+.progress-bar:hover .progress{
+    background-color: var(--green-color);
+
+    cursor: pointer;
+}
+
+.progress-bar:hover .progress::after{
+    display: block;
+}
+
